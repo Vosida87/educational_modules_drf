@@ -24,4 +24,6 @@ urlpatterns = [
     path('auth/', include('djoser.urls.jwt')),
     # эндпоинты аккаунтов
     path("api/accounts/", include("accounts.urls")),
+    # эндпоинты образовательных модулей
+    path("", include("modules.urls")),
 ]

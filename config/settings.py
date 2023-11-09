@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     # apps
     'accounts',
+    'modules',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +143,9 @@ MEDIA_URL = '/media/'
 
 # Настройка для JWT токенов
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
