@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     # apps
     'accounts',
     'modules',
+    # docs
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
