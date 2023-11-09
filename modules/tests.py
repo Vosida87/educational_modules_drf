@@ -4,7 +4,7 @@ from rest_framework.reverse import reverse
 from rest_framework import status
 
 
-class HabitsTestCase(APITestCase):
+class ModulesTestCase(APITestCase):
     """Тесы для модулей по status.HTTP"""
     def setUp(self):
         """Данные для теста"""
