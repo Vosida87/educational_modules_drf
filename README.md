@@ -36,10 +36,10 @@ SECRET_KEY='ваш_ключ_джанго'
 * ORM - используется django;
 * MVC/MTV - использована Model-View-Controller;
 * FBV/CBV - использовано Class-Based Views;
-* serializers - выполнено;
+* serializers - есть;
 * viewset/generic - использован generic;
 * Tests - покрытие 98%;
 * Git - есть коммиты;
 * Readme - есть;
 * PEP8 - соблюдён;
-* Swagger - нет.
+* Swagger - есть `http://127.0.0.1:8000/redoc/`.
