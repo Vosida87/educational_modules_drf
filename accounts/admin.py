@@ -1,3 +1,8 @@
 from django.contrib import admin
+from accounts.models import UserProfile
 
-# Register your models here.
+
+@admin.register(UserProfile)
+class UserAdmin(admin.ModelAdmin):
+    """Для создания пользователей в админке"""
+    list_display = ('user',)
