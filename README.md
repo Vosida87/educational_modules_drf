@@ -1,2 +1,2 @@
 # educational_modules_drf
-Project for interaction with educational modules, technical specification - TB2, technology stack: Django, DRF, PostgreSQL, Docker.
+Проект по взаимодействию с образовательными модулями, идентификатор ТЗ - TB2, стек технологий: Django, DRF, PostgreSQL, Docker.  
