@@ -7,7 +7,7 @@ NULLABLE = {'blank': True, 'null': True}
 
 class EducationalModule(models.Model):
     """Модель образовательных модулей"""
-    # Порядковый номер - идентификатор id
+    order_number = models.PositiveIntegerField(verbose_name='порядковый номер', **NULLABLE)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='создатель модуля', **NULLABLE)
     title = models.CharField(max_length=100, validators=[MinLengthValidator(5), MaxLengthValidator(50)])
     description = models.TextField(validators=[RegexValidator(r'^[A-Za-z0-9 ]+$', message='Только цифро буквенные '
