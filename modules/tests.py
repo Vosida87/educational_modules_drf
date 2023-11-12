@@ -32,16 +32,16 @@ class ModulesTestCase(APITestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_retrieve_habit(self):
-        """Тест на просмотр привычки"""
+    def test_retrieve_module(self):
+        """Тест на просмотр модуля"""
         module = EducationalModule.objects.create(title='new title', description='new description')
         url = reverse('modules:modules_get', kwargs={'pk': module.id})
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_update_habit(self):
-        """Тест на обновление привычки"""
-        # создаём привычку от тестового пользователя так как только он может редактировать её
+    def test_update_module(self):
+        """Тест на обновление модуля"""
+        # создаём модуль от тестового пользователя так как только он может редактировать её
         url = reverse('modules:modules_create')
         response = self.client.post(url, data=self.module_data)
         updated_module = {'title': 'title for update', 'description': 'test description update'}
@@ -49,16 +49,16 @@ class ModulesTestCase(APITestCase):
         response = self.client.patch(url, data=updated_module)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_delete_habit(self):
-        """Тест на удаление привычки"""
+    def test_delete_module(self):
+        """Тест на удаление модуля"""
         url = reverse('modules:modules_create')
         response = self.client.post(url, data=self.module_data)
         url = reverse('modules:modules_delete', kwargs={'pk': response.data['id']})
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-    def test_list_user_habits(self):
-        """Тест на просмотр привычек пользователя"""
+    def test_list_user_module(self):
+        """Тест на просмотр модулей пользователя"""
         url = reverse('modules:user_modules_list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
